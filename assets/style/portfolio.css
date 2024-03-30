@@ -37,7 +37,7 @@ red         #EC5B64
     --lightcol: #19B8E1;
     --mediumcol: #1183C5;
     --darkcol: #242C7D;
-    color: azure;
+    color: #f0ffff;
 }
 
 :root.warm{
@@ -65,10 +65,19 @@ header{
     z-index: 20;
 }
 
+.theme{
+    width: 3rem;
+    filter: invert(92%) sepia(1%) saturate(1618%) hue-rotate(141deg) brightness(107%) contrast(103%);
+    position: absolute;
+    top: 2.5rem;
+    left: 14vw;
+}
+
 .headerwave {
     width: 150vw;
     height: 250px;
     fill: var(--mediumcol);
+    transition: fill 1.5s;
 }
 
 /* my picture */
@@ -113,6 +122,8 @@ header{
     min-height: 100vh;
     animation: grow 2s forwards;
 }
+
+
 @keyframes grow {
     from{
         transform: scale(0);
@@ -174,8 +185,10 @@ p#greeting{
     position: absolute;
     width: 40vw;
     fill: var(--lightcol);
+    transition: fill 1.5s;
     animation: blobspin 20s reverse ease-in infinite;
 }
+
 
 .slow{
     animation: blobspin 30s alternate-reverse infinite;
