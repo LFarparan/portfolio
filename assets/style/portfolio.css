@@ -16,7 +16,7 @@ red         #EC5B64
     padding: 0px;
     box-sizing: border-box;
     --borderguide: 1px white solid;
-    /* --borderguide: none; */
+    --borderguide: none;
 }
 
 .rubik-scribble-regular {
@@ -33,11 +33,15 @@ red         #EC5B64
    
 
 :root.cold{
-    --blackcol: #0F102A;
+    --blackcol: #121446;
     --lightcol: #19B8E1;
     --mediumcol: #1183C5;
     --darkcol: #242C7D;
     color: #f0ffff;
+    --img1 : url(../images/coldwave1.svg);
+    --img2 : url(../images/coldwave2.svg);
+    --img3 : url(../images/coldwave3.svg);
+    --bg1 : url(../images/coldbackground.png)
 }
 
 :root.warm{
@@ -46,6 +50,10 @@ red         #EC5B64
     --mediumcol: #D33867;
     --darkcol: #EC5B64;
     color: azure;
+    --img1 : url(../images/warmwave1.svg);
+    --img2 : url(../images/warmwave2.svg);
+    --img3 : url(../images/warmwave3.svg);
+    --bg1 : url(../images/warmbackground.png)
 }
 
 header{
@@ -54,8 +62,9 @@ header{
     height: 100vh;
     max-width: 100%;
     border: var(--borderguide);
-    background-image: url('../images/gradientbg.png');
+    background-image: var(--bg1);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hbackground{
@@ -66,11 +75,13 @@ header{
 }
 
 .theme{
-    width: 3rem;
+    width: 1.5rem;
     filter: invert(92%) sepia(1%) saturate(1618%) hue-rotate(141deg) brightness(107%) contrast(103%);
     position: absolute;
     top: 2.5rem;
     left: 14vw;
+    transform: scale(2);
+    transition: transform 1s;
 }
 
 .headerwave {
@@ -97,20 +108,13 @@ header{
 }
 
 
-
-
-
-
-
-
 .blobcon{
     position: absolute;
-    top: 0px;
+    top: -50px;
     right: 0px;
     width: 50vw; 
     border: var(--borderguide);
-    overflow: hidden;
-    
+    overflow: clip;
 }
 
 .relablob{
@@ -120,7 +124,7 @@ header{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    animation: grow 2s forwards;
+    animation: fadein 2s forwards;
 }
 
 
@@ -140,10 +144,12 @@ header{
         transform: translateY(100%);
         opacity: 0;
     }
-    80%{
-        transform: translateY(-10%);
+    70%{
+        transform: translateY(-8%);
         opacity: .6;
     }
+    
+
     100%{
         transform: translateY(0%);
         opacity: 1;
@@ -152,11 +158,14 @@ header{
 
 p#greeting{
     display: flex;
+    border: var(--borderguide);
     align-items: center;
     position: absolute;
+    text-align: center;
     z-index: 21;
-    margin: 0 12vw 0 15vw;
-    font-size: max(11px, 2.3vw);
+    margin: 0 12vw 0 12vw;
+    font-size: max(1.3rem, 2.3vw);
+    min-width: 225px;
     min-height: 80px;
     font-family: "Rubik Scribble", system-ui;
     font-weight: 900;
@@ -183,9 +192,9 @@ p#greeting{
 
 .blob{
     position: absolute;
-    width: 40vw;
+    width: max(400px,40vw);
     fill: var(--lightcol);
-    transition: fill 1.5s;
+    transition: fill 1s;
     animation: blobspin 20s reverse ease-in infinite;
 }
 
@@ -213,6 +222,41 @@ p#greeting{
 
 
 
+.headfoot{
+    width: 100%;
+    max-width: 100vw;
+    aspect-ratio: 5 / 1;
+    border: var(--borderguide);
+    background-image: var(--img1);
+    background-size: auto 105%;
+    background-repeat: no-repeat;
+    transform: translateY(-75%);
+    transition: transform 1s ease;
+    animation: wavefade 16s infinite 1s;
+}
+
+@keyframes wavefade {
+    0%{
+        background-image: var(--img1);
+
+    }
+    33%{
+        background-image: var(--img2); 
+    }
+    67%{
+        background-image: var(--img3); 
+    }
+    100%{
+        background-image: var(--img1);  
+    }
+}
+
+
+main{
+    background-color: var(--blackcol);
+    height: 100vh;
+    transition: background-color .5s;
+}
 
 
 

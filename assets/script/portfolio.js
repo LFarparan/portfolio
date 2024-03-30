@@ -9,6 +9,6 @@ theme.addEventListener('click', toggleTheme);
 function toggleTheme(){
     root.classList.toggle('warm');
     theme.src = (theme.src.includes('snowflake.svg'))? './assets/images/fire.svg': './assets/images/snowflake.svg'
-    
+    theme.classList.toggle('.scale');
 
 }
