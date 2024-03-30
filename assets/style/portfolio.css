@@ -38,10 +38,10 @@ red         #EC5B64
     --mediumcol: #1183C5;
     --darkcol: #313a9f;
     color: #f0ffff;
-    --img1 : url(../images/coldwave1.svg);
-    --img2 : url(../images/coldwave2.svg);
-    --img3 : url(../images/coldwave3.svg);
-    --bg1 : url(../images/coldbackground.png);
+    --img1 : url('../images/coldwave1.svg');
+    --img2 : url("../images/coldwave2.svg");
+    --img3 : url("../images/coldwave3.svg");
+    --bg1 : url("../images/coldbackground.png");
     --theme : invert(92%) sepia(1%) saturate(1618%) hue-rotate(141deg) brightness(110%) contrast(103%);
 }
 
@@ -209,11 +209,6 @@ div#theme-change{
 .theme-icon{
     filter: var(--theme);
     width: max(200px ,18vw);
-    transition: filter .5s ease-out;
-}
-
-.theme-icon.darken{
-    filter: invert(92%) sepia(3%) saturate(1628%) hue-rotate(141deg) brightness(100%) contrast(100%);
 }
 
 @keyframes wobble {
@@ -238,8 +233,12 @@ div#theme-change{
     position: absolute;
     width: max(400px,40vw);
     fill: var(--lightcol);
-    transition: fill 1s;
+    transition: fill .8s;
     animation: blobspin 20s reverse ease-in infinite;
+}
+
+.blobglow{
+    fill: var(--mediumcol);
 }
 
 

@@ -1,19 +1,21 @@
 const root = document.querySelector(':root');
 const blobcon = document.querySelector('.relablob');
-const themecon = document.querySelector('#theme-change')
-const themeIcon = document.querySelector('.theme-icon')
-const theme = document.querySelector('.theme')
+const themecon = document.querySelector('#theme-change');
+const themeIcon = document.querySelector('.theme-icon');
+const theme = document.querySelector('.theme');
+const blobs = document.querySelectorAll('.blob');
 
 root.classList = 'cold';
 
 themecon.addEventListener('click', toggleTheme);
 theme.addEventListener('click', toggleTheme);
-themecon.addEventListener('mouseover', toggleIcon);
-themecon.addEventListener('mouseout', toggleIcon);
+themecon.addEventListener('mouseover', toggleblob);
+themecon.addEventListener('mouseout', toggleblob);
 
-
-function toggleIcon(){
-    themeIcon.classList.toggle('darken')
+function toggleblob(){
+    blobs.forEach(blob => {
+        blob.classList.toggle('blobglow');
+    })
 }
 
 
