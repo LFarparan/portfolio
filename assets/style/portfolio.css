@@ -1,0 +1,207 @@
+/* 
+black       #0F102A
+sky blue    #19B8E1
+dark blue   #242C7D
+blue        #1183C5
+*/
+
+/* 
+black       #5b308c
+sky red     #FB736B
+dark blue   #D33867
+red         #EC5B64
+*/
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    --borderguide: 1px white solid;
+    /* --borderguide: none; */
+}
+
+.rubik-scribble-regular {
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+   
+
+:root.cold{
+    --blackcol: #0F102A;
+    --lightcol: #19B8E1;
+    --mediumcol: #1183C5;
+    --darkcol: #242C7D;
+    color: azure;
+}
+
+:root.warm{
+    --blackcol: #5b308c;
+    --lightcol: #FB736B;
+    --mediumcol: #D33867;
+    --darkcol: #EC5B64;
+    color: azure;
+}
+
+header{
+    z-index: 19;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    border: var(--borderguide);
+    background-image: url('../images/gradientbg.png');
+    background-size: cover;
+}
+
+.hbackground{
+    border: var(--borderguide);
+    overflow-x: hidden;
+    min-height: 100vh;
+    z-index: 20;
+}
+
+.headerwave {
+    width: 150vw;
+    height: 250px;
+    fill: var(--mediumcol);
+}
+
+/* my picture */
+
+.mypiccon{
+    border: var(--borderguide);
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+
+}
+
+.mypic{
+    width: max(15vw);
+}
+
+
+
+
+
+
+
+
+.blobcon{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50vw; 
+    border: var(--borderguide);
+    overflow: hidden;
+    
+}
+
+.relablob{
+    border: var(--borderguide);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: grow 2s forwards;
+}
+@keyframes grow {
+    from{
+        transform: scale(0);
+        opacity: .2;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    80%{
+        transform: translateY(-10%);
+        opacity: .6;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+p#greeting{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 21;
+    margin: 0 12vw 0 15vw;
+    font-size: max(11px, 2.3vw);
+    min-height: 80px;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 900;
+    animation: wobble 10s infinite linear;
+}
+
+@keyframes wobble {
+    0%{
+        transform: skewX(0deg);
+    }
+    30%{
+        transform: skewX(8deg);
+    }
+    50%{
+        transform: skewX(0deg);
+    }
+    75%{
+        transform: skewX(-8deg);
+    }
+    100%{
+        transform: skewX(0deg);
+    }
+}
+
+.blob{
+    position: absolute;
+    width: 40vw;
+    fill: var(--lightcol);
+    animation: blobspin 20s reverse ease-in infinite;
+}
+
+.slow{
+    animation: blobspin 30s alternate-reverse infinite;
+}
+
+.slower{
+    animation: blobspin 25s linear infinite;
+}
+
+
+@keyframes blobspin {
+    0%{
+        transform: rotate(0deg) scale(1)
+    }
+    40%{
+        transform: rotate(150deg) scale(.8)
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+
+
+
+
+
+
+
