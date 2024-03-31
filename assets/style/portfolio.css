@@ -11,6 +11,7 @@ sky red     #FB736B
 dark blue   #D33867
 red         #EC5B64
 */
+
 *{
     margin: 0px;
     padding: 0px;
@@ -100,7 +101,9 @@ header{
 
 .theme{
     width: 2.5rem;
-    filter: var(--theme)
+    filter: var(--theme);
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .headerwave {
@@ -109,7 +112,6 @@ header{
     fill: var(--mediumcol);
     transition: fill 1.5s;
 }
-
 
 .blobcon{
     position: absolute;
@@ -209,6 +211,8 @@ div#theme-change{
 .theme-icon{
     filter: var(--theme);
     width: max(200px ,17.5vw);
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 @keyframes wobble {
@@ -265,13 +269,13 @@ div#theme-change{
 
 p.clickme{
     transition: all .4s linear;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 .fade{
     opacity: 0;
 }
-
-
 
 .headfoot{
     z-index: 20;
@@ -313,7 +317,6 @@ p.clickme{
         transform: translateY(-75%);
     }
 }
-
 
 main{
     z-index: 30;

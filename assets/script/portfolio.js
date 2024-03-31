@@ -20,7 +20,6 @@ function toggleblob(){
     clickme.classList.toggle('fade');
 }
 
-
 function toggleTheme(){
     root.classList.toggle('warm');
     themeIcon.src = (themeIcon.src.includes('snowflake.svg'))? './assets/images/fire.svg': './assets/images/snowflake.svg';
