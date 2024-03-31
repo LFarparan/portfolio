@@ -4,6 +4,7 @@ const themecon = document.querySelector('#theme-change');
 const themeIcon = document.querySelector('.theme-icon');
 const theme = document.querySelector('.theme');
 const blobs = document.querySelectorAll('.blob');
+const clickme = document.querySelector('p.clickme');
 
 root.classList = 'cold';
 
@@ -16,6 +17,7 @@ function toggleblob(){
     blobs.forEach(blob => {
         blob.classList.toggle('blobglow');
     })
+    clickme.classList.toggle('fade');
 }
 
 

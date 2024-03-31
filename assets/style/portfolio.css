@@ -208,7 +208,7 @@ div#theme-change{
 
 .theme-icon{
     filter: var(--theme);
-    width: max(200px ,18vw);
+    width: max(200px ,17.5vw);
 }
 
 @keyframes wobble {
@@ -261,6 +261,14 @@ div#theme-change{
     100%{
         transform: rotate(360deg) scale(1);
     }
+}
+
+p.clickme{
+    transition: all .4s linear;
+}
+
+.fade{
+    opacity: 0;
 }
 
 
