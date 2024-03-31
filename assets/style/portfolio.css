@@ -18,9 +18,13 @@ red         #EC5B64
     box-sizing: border-box;
     --borderguide: 1px white solid;
     --borderguide: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    color: #f3f3f3;
+
 }
 
-.rubik-scribble-regular {
+/* .rubik-scribble-regular {
     font-family: "Rubik Scribble", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -30,8 +34,25 @@ red         #EC5B64
     font-family: "Lobster", sans-serif;
     font-weight: 400;
     font-style: normal;
+}
+
+.rubik-wet paint-regular {
+    font-family: "Rubik Wet Paint", system-ui;
+    font-weight: 400;
+    font-style: normal;
   }
-   
+
+  
+  <uniquifier>: Use a unique and descriptive class name
+  <weight>: Use a value from 300 to 900 
+ 
+  
+.rubik-<uniquifier> {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}   */
 
 :root.cold{
     --blackcol: #121446;
@@ -52,10 +73,10 @@ red         #EC5B64
     --mediumcol: #D33867;
     --darkcol: #EC5B64;
     color: azure;
-    --img1 : url(../images/warmwave1.svg);
-    --img2 : url(../images/warmwave2.svg);
-    --img3 : url(../images/warmwave3.svg);
-    --bg1 : url(../images/warmbackground.png);
+    --img1 : url('../images/warmwave1.svg');
+    --img2 : url('../images/warmwave2.svg');
+    --img3 : url('../images/warmwave3.svg');
+    --bg1 : url('../images/warmbackground.png');
     --theme : invert(92%) sepia(1%) saturate(1618%) hue-rotate(141deg) brightness(110%) contrast(103%);
 }
 
@@ -83,7 +104,7 @@ header{
 }
 
 .themecon{
-    z-index: 31;
+    z-index: 90;
     width: 3rem;
     height: 3rem;
     border: 1px solid white;
@@ -93,6 +114,7 @@ header{
     position: sticky;
     top: 1rem;
     left: 3vw;
+    transition: background-color .4s ease-out;
 
 }
 .themecon:hover{
@@ -104,13 +126,6 @@ header{
     filter: var(--theme);
     user-select: none;
     -webkit-user-drag: none;
-}
-
-.headerwave {
-    width: 150vw;
-    height: 250px;
-    fill: var(--mediumcol);
-    transition: fill 1.5s;
 }
 
 .blobcon{
@@ -132,38 +147,34 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    user-select: none;
+    -webkit-user-drag: none;
 }
+
+ /* hello */
 
 p#greetingz {
     margin: 0 10px;
     width: max(200px, 30vw);
     aspect-ratio: 5 / 1;
+    /* font-family: "Rubik Wet Paint", system-ui; */
     font-family: "Lobster", sans-serif;
     font-size: max(27px , 4vw);
+    user-select: none;
     animation: colorchange 10s linear infinite;
 }
 
 @keyframes colorchange {
-    0%{
-        color: eeeefc;
-    }
-    25%{
-        color: var(--lightcol);
-    }
-    50%{
-        color: var(--darkcol);
-    }
-    75%{
-        color: var(--mediumcol);
-    }
-    100%{
-        color: eeeefc;
-    }
+    0%{ color: eeeefc }
+    25%{ color: var(--lightcol) }
+    50%{ color: var(--darkcol) }
+    75%{ color: var(--mediumcol) }
+    100%{ color: eeeefc }
 }
 
 .relablob{
     width: max(350px, 50vw);
-    /* border: var(--borderguide); */
+    border: var(--borderguide);
     position: relative;
     display: flex;
     align-items: center;
@@ -180,11 +191,11 @@ p#greetingz {
         opacity: 0;
     }
     70%{
-        transform: translateY(-10%) scale(1);
+        transform: translateY(-6%) scale(1);
         opacity: .8;
     }
     100%{
-        transform: translateY(-4%) scale(1);
+        transform: translateY(-0%) scale(1);
         opacity: 1;
     }
 }
@@ -203,8 +214,6 @@ div#theme-change{
     font-size: max(1.3rem, 2.3vw);
     width: max(275px,25vw);
     aspect-ratio: 1 / .9;
-    font-family: "Rubik Scribble", system-ui;
-    font-weight: 900;
     animation: wobble 10s infinite linear;
 }
 
@@ -216,21 +225,11 @@ div#theme-change{
 }
 
 @keyframes wobble {
-    0%{
-        transform: skewX(0deg);
-    }
-    30%{
-        transform: skewX(8deg);
-    }
-    50%{
-        transform: skewX(0deg);
-    }
-    75%{
-        transform: skewX(-8deg);
-    }
-    100%{
-        transform: skewX(0deg);
-    }
+    0%{ transform: skewX(0deg) }
+    30%{ transform: skewX(8deg) }
+    50%{ transform: skewX(0deg) }
+    75%{ transform: skewX(-8deg) }
+    100%{ transform: skewX(0deg) }
 }
 
 .blob{
@@ -242,9 +241,8 @@ div#theme-change{
 }
 
 .blobglow{
-    fill: var(--mediumcol);
+    fill: var(--mediumcol)
 }
-
 
 .slow{
     animation: blobspin 30s alternate-reverse infinite;
@@ -256,21 +254,21 @@ div#theme-change{
 
 
 @keyframes blobspin {
-    0%{
-        transform: rotate(0deg) scale(1)
-    }
-    40%{
-        transform: rotate(150deg) scale(.8)
-    }
-    100%{
-        transform: rotate(360deg) scale(1);
-    }
+    0%{ transform: rotate(0deg) scale(1) }
+    40%{ transform: rotate(150deg) scale(.8) }
+    100%{ transform: rotate(360deg) scale(1) }
 }
 
 p.clickme{
     transition: all .4s linear;
     user-select: none;
     -webkit-user-drag: none;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 700;
+}
+
+.disappear{
+    opacity: 0;
 }
 
 .fade{
@@ -293,38 +291,99 @@ p.clickme{
 @keyframes wavefade {
     0%{
         background-image: var(--img1);
-        transform: translateY(-75%);
+        transform: translateY(-85%);
     }
     20%{
-        transform: translateY(-80%);
+        transform: translateY(-90%);
     }
     33%{
         background-image: var(--img2);
-        transform: translateY(-85%);
+        transform: translateY(-95%);
     }
     50%{
-        transform: translateY(-80%);
+        transform: translateY(-90%);
     }
     67%{
         background-image: var(--img3);
-        transform: translateY(-75%);
+        transform: translateY(-85%);
     }
     83%{
-        transform: translateY(-70%);
+        transform: translateY(-80%);
     }
     100%{
         background-image: var(--img1);
-        transform: translateY(-75%);
+        transform: translateY(-85%);
     }
 }
 
 main{
     z-index: 30;
     background-color: var(--blackcol);
-    height: 100vh;
+    min-height: 150vh;
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER PART */
+*{
+    /* --borderguide: 1px solid white; */
+}
+
+footer{
+    border: var(--borderguide);
+    display: flex;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 50vh;
+}
+.portraitcon{
+    width: max(475px, 55vw);
+    border: var(--borderguide);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#portraitpic{
+    margin: 0px 0px 0px max(1px, 3vw);
+    border: var(--borderguide);
+    width: max(200px, 20vw);
+    height: max(200px, 20vw);
+}
+
+.aboutcon{
+    border: var(--borderguide);
+    margin: 0 max(1px, 3vw) 0 0;
+    height: max(200px, 20vw);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2.about{
+    margin: 5px 0;
+    margin-right: auto;
+    font-size: max(20px, 2vw);
+    font-weight: 500;
+}
+
+p.aboutme{
+    margin: 5px 0;
+    font-size: max(16px, 1.1vw);
+}
 

@@ -5,13 +5,22 @@ const themeIcon = document.querySelector('.theme-icon');
 const theme = document.querySelector('.theme');
 const blobs = document.querySelectorAll('.blob');
 const clickme = document.querySelector('p.clickme');
+const profilePic = document.querySelector('img#portraitpic');
 
 root.classList = 'cold';
 
-themecon.addEventListener('click', toggleTheme);
 theme.addEventListener('click', toggleTheme);
 themecon.addEventListener('mouseover', toggleblob);
 themecon.addEventListener('mouseout', toggleblob);
+themecon.addEventListener('click', function() {
+    toggleTheme();
+    var classArray = Array.from(clickme.classList);
+    if (!classArray.includes('disappear')){
+        console.log(clickme.classList);
+        clickme.classList.toggle('disappear');
+        setTimeout( ()=>{clickme.classList.toggle('disappear')}, 10000);
+    }
+});
 
 function toggleblob(){
     blobs.forEach(blob => {
@@ -24,4 +33,5 @@ function toggleTheme(){
     root.classList.toggle('warm');
     themeIcon.src = (themeIcon.src.includes('snowflake.svg'))? './assets/images/fire.svg': './assets/images/snowflake.svg';
     theme.src = (theme.src.includes('snowflake.svg'))? './assets/images/fire.svg': './assets/images/snowflake.svg'
+    profilePic.src = (profilePic.src.includes('coldportrait.png'))? './assets/images/warmportrait.png': './assets/images/coldportrait.png';
 }
