@@ -72,8 +72,8 @@ red         #EC5B64
 :root.warm{
     --blackcol: #5b308c;
     --lightcol: #FB736B;
-    --mediumcol: #D33867;
-    --darkcol: #EC5B64;
+    --mediumcol:#EC5B64;
+    --darkcol:  #D33867;
     color: azure;
     --img1 : url('../images/warmwave1.svg');
     --img2 : url('../images/warmwave2.svg');
@@ -339,14 +339,32 @@ h1.works{
     min-width: 270px;
     text-align: right;
     padding: 10px 35px;
-    margin: min(100px, 15vw) 0 30px 0;
+    margin: min(100px, 10vw) 0 20vh 0;
     border-radius: 0 20px 20px 0;
     font-weight: 900;
     font-family: "Lobster", system-ui;
     position: sticky;
     top: 10px;
     background-color: var(--darkcol);
+    animation: peek linear;
+    animation-timeline: view();
+}
 
+
+
+@keyframes peek {
+    0%{
+        transform: translateX(-100%); opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    33%{
+        transform: translateX(0%); opacity: 1;
+    }
+    100%{
+        transform: translateX(0%); opacity: 1;
+    }
 }
 
 .work-showcase1{
@@ -369,8 +387,8 @@ h1.works{
 
 .projectpic{
     width: max(300px, 25vw);
+  
 }
-
 
 .prod-description{
     border-radius: 40px;
