@@ -16,7 +16,6 @@ themecon.addEventListener('click', function() {
     toggleTheme();
     var classArray = Array.from(clickme.classList);
     if (!classArray.includes('disappear')){
-        console.log(clickme.classList);
         clickme.classList.toggle('disappear');
         setTimeout( ()=>{clickme.classList.toggle('disappear')}, 10000);
     }
