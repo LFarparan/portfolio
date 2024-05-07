@@ -162,7 +162,7 @@ p#greetingz {
     margin: 0 10px;
     width: max(250px, 30vw);
     aspect-ratio: 5 / 1;
-    /* font-family: "Rubik Wet Paint", system-ui; */
+    /* font-family: "Rubik", system-ui; */
     font-family: "Lobster", sans-serif;
     font-size: max(34px , 4vw);
     user-select: none;
@@ -325,7 +325,7 @@ p.clickme{
 /* PROJECT SECTION */
 
 *{
-    /* --borderguide: 1px solid white; */
+    --borderguide: 1px solid white;
 }
 
 main{
@@ -351,15 +351,15 @@ h1.works{
 }
 
 
-
 @keyframes peek {
     0%{
         transform: translateX(-100%); opacity: 0;
     }
+    
     20%{
         opacity: 0;
     }
-    33%{
+    30%{
         transform: translateX(0%); opacity: 1;
     }
     100%{
@@ -367,46 +367,46 @@ h1.works{
     }
 }
 
-.work-showcase1{
+section.work-showcase1{
+    margin: auto;
     width: min(100vw, 100%);
-    min-height: 50vh;
     padding: 5vh 0;
     border: var(--borderguide);
     display: flex;
-    justify-content:center;
     align-items: center;
-    flex-wrap: wrap;
-}
-
-.project1{
-    border: var(--borderguide);
-    width: max(450px, 33vw);
-    display: flex;
     justify-content: center;
 }
 
-.projectpic{
-    width: max(300px, 25vw);
-  
+.mainspace{
+    border: var(--borderguide);
+    width: max(450px, 80vw);
+    margin: auto;
+    display: flex;
+
+}
+
+.fillerspace{
+    width: 10vw;
+    border: var(--borderguide);
+    flex-shrink: 1;
 }
 
 .prod-description{
     border-radius: 40px;
     border: 3px solid var(--mediumcol);
     border-width: 3px 3px 0 3px;
-    width: max(450px, 40vw);
-    height: 5 / 2;
-    max-height: 48vh;
+    width: max(520px, 55vw);
+    aspect-ratio: 5 / 3.2;
     padding-bottom: 10%;
     background-image: var(--border1);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     animation: borderfade 15s linear infinite;
-    margin: 3vh 3vw;
+    margin: auto;
+    padding: 1vw;
 }
 
 @keyframes borderfade {
@@ -424,20 +424,61 @@ h1.works{
     }
 }
 
+.project1{
+    border: var(--borderguide);
+    padding-top: 2vh;
+    
+}
+
+.projectpic{
+    width: max(250px, 30vw);
+    border: 1px solid var(--mediumcol);
+    border-radius: 20px;
+  
+}
+
 h2.project-name{
     color: var(--blackcol);
     font-weight: 500;
-    margin: max(5px, 5vw) 0 10px max(20px, 2rem);
-    /* margin-top: max(5px, 1.5vw);
-    padding: max(20px, 2rem);
-    padding-bottom: 10px; */
+    margin: max(5px, 1vh) 0 10px max(10px, 3vh);
+    font-size: max(16px, 1.5vw);
+}
+
+.desccon{
+    border: var(--borderguide);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1vw;
+    padding-bottom: 7vh;
 }
 
 p.prod-descr{
     color: var(--blackcol);
-    font-size: max(16px, 1.5vw);
+    font-size: max(16px, 1.2vw);
     font-weight: 300;
-    padding: .5vw max(20px, 2rem);
+}
+
+.hrefcon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+button.projlink{
+    width: min(150px, 70%);
+    padding: .3rem;
+    margin: .7rem;
+    background-color: var(--mediumcol);
+    border: 1px solid var(--darkcol);
+    border-radius: 10px;
+    font-weight: 400;
+}
+
+button.projlink:hover{
+    background-color: var(--lightcol);
 }
 
 #odin{
@@ -507,4 +548,5 @@ p.aboutme{
     margin: 5px 0;
     font-size: max(16px, 1.1vw);
 }
+
 

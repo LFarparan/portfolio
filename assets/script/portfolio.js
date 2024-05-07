@@ -34,3 +34,4 @@ function toggleTheme(){
     theme.src = (theme.src.includes('snowflake.svg'))? './assets/images/fire.svg': './assets/images/snowflake.svg'
     profilePic.src = (profilePic.src.includes('coldportrait.png'))? './assets/images/warmportrait.png': './assets/images/coldportrait.png';
 }
+
