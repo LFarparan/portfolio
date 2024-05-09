@@ -192,12 +192,8 @@ p#greetingz {
 
 @keyframes fadein {
     0%{
-        transform: translateY(50%) scale(.7);
+        transform:scale(.7);
         opacity: 0;
-    }
-    70%{
-        transform: translateY(-6%) scale(1);
-        opacity: .8;
     }
     100%{
         transform: translateY(-0%) scale(1);
@@ -382,8 +378,19 @@ section.work-showcase1{
     width: max(450px, 80vw);
     margin: auto;
     display: flex;
-
+    animation: pop 1s ease-in forwards;
+    animation-timeline: view();
 }
+
+
+@keyframes pop{
+    0% { transform: scale(.7); opacity: 0;}
+    45% { transform: scale(1); opacity: 1 ;}
+    65% { transform: scale(1); opacity: 1 ;}
+    100% { transform: scale(.7); opacity: 0;}
+}
+
+
 
 .fillerspace{
     width: 10vw;
