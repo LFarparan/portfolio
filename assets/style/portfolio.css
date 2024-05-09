@@ -332,6 +332,7 @@ main{
 
 h1.works{
     display: inline-block;
+    z-index: 89;
     min-width: 270px;
     text-align: right;
     padding: 10px 35px;
