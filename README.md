@@ -1,2 +1,3 @@
 # portfolio
-Creating a portfolio with lava lamp theme.
+
+Creating a LavaLamp-themed portfolio.
