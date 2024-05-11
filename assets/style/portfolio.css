@@ -220,7 +220,7 @@ div#theme-change{
 
 .theme-icon{
     filter: var(--theme);
-    width: max(180px ,16.5vw);
+    width: max(180px ,16vw);
     user-select: none;
     -webkit-user-drag: none;
 }
