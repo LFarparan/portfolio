@@ -96,7 +96,7 @@ body{
 header{
     z-index: 19;
     width: min(100vw, 100%);
-    height: 100vh;
+    height: 95vh;
 
 }
 
@@ -212,7 +212,7 @@ div#theme-change{
     text-align: center;
     z-index: 21;
     margin: 0 12vw 0 12vw;
-    font-size: max(1.3rem, 2.3vw);
+    font-size: max(1.1rem, 2vw);
     width: max(275px,25vw);
     aspect-ratio: 1 / .9;
     animation: wobble 10s infinite linear;
@@ -220,7 +220,7 @@ div#theme-change{
 
 .theme-icon{
     filter: var(--theme);
-    width: max(200px ,17.5vw);
+    width: max(180px ,16.5vw);
     user-select: none;
     -webkit-user-drag: none;
 }
@@ -235,7 +235,7 @@ div#theme-change{
 
 .blob{
     position: absolute;
-    width: max(400px,40vw);
+    width: max(350px,35vw);
     fill: var(--lightcol);
     transition: fill .8s;
     animation: blobspin 20s reverse ease-in infinite;
@@ -291,28 +291,28 @@ p.clickme{
 @keyframes wavefade {
     0%{
         background-image: var(--img1);
-        transform: translateY(-85%);
+        transform: translateY(-95%);
     }
     20%{
-        transform: translateY(-90%);
+        transform: translateY(-100%);
     }
     33%{
         background-image: var(--img2);
-        transform: translateY(-95%);
+        transform: translateY(-105%);
     }
     50%{
-        transform: translateY(-90%);
+        transform: translateY(-100%);
     }
     67%{
         background-image: var(--img3);
-        transform: translateY(-85%);
+        transform: translateY(-95%);
     }
     83%{
-        transform: translateY(-80%);
+        transform: translateY(-90%);
     }
     100%{
         background-image: var(--img1);
-        transform: translateY(-85%);
+        transform: translateY(-95%);
     }
 }
 
