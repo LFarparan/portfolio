@@ -113,6 +113,15 @@ header{
     z-index: 20;
 }
 
+.newone{
+    text-decoration: none;
+    color: var(--lightcol);
+}
+
+.newone:hover{
+    color: white;
+}
+
 .themecon{
     z-index: 90;
     width: 3rem;
@@ -177,9 +186,9 @@ p#greetingz {
 
 @keyframes colorchange {
     0%{ color: eeeefc }
-    25%{ color: var(--lightcol) }
+    15%{ color: var(--lightcol) }
     50%{ color: var(--darkcol) }
-    75%{ color: var(--mediumcol) }
+    85%{ color: var(--mediumcol) }
     100%{ color: eeeefc }
 }
 
